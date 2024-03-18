@@ -20,7 +20,7 @@ XFWaterfallFlowView(cellClass: myCollectionViewCell.classForCoder(),
 * **需要传入的几个参数说明**
 
 | cellClass                   | 自定义cell的class类型                                       |
-|-----------------------------|:------------------------------------------------------------|
+|:-----------------------------|:------------------------------------------------------------|
 | waterfallFlowViewIdentifier | identifier                                                  |
 | delegateClass               | 实现代理方法的class，需要继承自XFWaterfallFlowViewDelegate   |
 | dataSourceClass             | 实现数据源方法的class，需要继承自XFWaterfallFlowViewDataSource |
