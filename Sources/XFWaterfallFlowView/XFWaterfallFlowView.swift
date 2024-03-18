@@ -1,6 +1,8 @@
 import UIKit
 import SwiftUI
 
+
+
 struct XFWaterfallFlowView:UIViewRepresentable {
     
     typealias UIViewType = XFWaterfallFlow
@@ -9,13 +11,14 @@ struct XFWaterfallFlowView:UIViewRepresentable {
     
     private var waterfallFlowViewIdentifier = "waterfallFlowViewCell"
     
-    private let delegateClass:XFWaterfallFlowViewDelegate?
-
-    private let dataSourceClass:XFWaterfallFlowViewDataSource?
     
-    @Binding var layoutModel:XFComputeLayoutModel?
+    private let delegateClass:waterfallFlowViewDelegate
 
-    init(cellClass: AnyClass, waterfallFlowViewIdentifier: String = "waterfallFlowViewCell", delegateClass: XFWaterfallFlowViewDelegate?, dataSourceClass: XFWaterfallFlowViewDataSource?, layoutModel: Binding<XFComputeLayoutModel?>) {
+    private let dataSourceClass:waterfallFlowViewDataSource
+    
+    @Binding var layoutModel:XFComputeLayoutModel
+
+    init(cellClass: AnyClass, waterfallFlowViewIdentifier: String = "waterfallFlowViewCell", delegateClass: waterfallFlowViewDelegate, dataSourceClass: waterfallFlowViewDataSource, layoutModel: Binding<XFComputeLayoutModel>) {
         self.cellClass = cellClass
         self.waterfallFlowViewIdentifier = waterfallFlowViewIdentifier
         self.delegateClass = delegateClass
@@ -34,26 +37,24 @@ struct XFWaterfallFlowView:UIViewRepresentable {
     }
    
         
-    func makeCoordinator() -> (XFWaterfallFlowViewDelegate,XFWaterfallFlowViewDataSource) {
-        return (delegateClass ?? XFWaterfallFlowViewDelegate(),
-                dataSourceClass ?? XFWaterfallFlowViewDataSource(waterfallFlowViewIdentifier: waterfallFlowViewIdentifier))
+    func makeCoordinator() -> (waterfallFlowViewDelegate,waterfallFlowViewDataSource) {
+        return (delegateClass,
+                dataSourceClass)
     }
     
     
     
     func updateUIView(_ uiViewController: XFWaterfallFlow, context: Context) {
-        if let layoutModel {
-            uiViewController.setLayoutValue(model: layoutModel)
-        }
+        uiViewController.setLayoutValue(model: layoutModel)
     }
     
 }
 
-class XFWaterfallFlowViewDelegate:NSObject, UICollectionViewDelegate {
+class waterfallFlowViewDelegate:NSObject, UICollectionViewDelegate {
     
 }
 
-class XFWaterfallFlowViewDataSource:NSObject, UICollectionViewDataSource {
+class waterfallFlowViewDataSource:NSObject, UICollectionViewDataSource {
     var waterfallFlowViewIdentifier = ""
     var numberOfSections = 1
     var numberOfItemsInSection = 0
