@@ -43,7 +43,3 @@ XFWaterfallFlowView(cellClass: myCollectionViewCell.classForCoder(),
 
 #### 效果
 
-
-![gif](https://github.com/snow-xf/XFWaterfallFlowView/blob/main/%25E5%25BD%2595%25E5%25B1%258F2024-03-18%252020.47.37.gif)
-
-![图片](https://github.com/snow-xf/XFWaterfallFlowView/blob/main/WX20240318-204724%402x.png)
