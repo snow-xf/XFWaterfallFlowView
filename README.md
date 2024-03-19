@@ -44,4 +44,3 @@ XFWaterfallFlowView(cellClass: myCollectionViewCell.classForCoder(),
 #### 效果
 
 ![](https://github.com/snow-xf/XFWaterfallFlowView/blob/main/test.gif)
-![](https://github.com/snow-xf/XFWaterfallFlowView/blob/main/test.png)
