@@ -7,7 +7,7 @@
 * 目前只做了一个section的情况，不支持多section
 * 功能较单一，仅能实现基础的展示、点击等操作。复杂的功能后续再行封装。或者干脆不用该库。直接UICollectionView，最后包装一下
 
-### demo之后再发布,以下是用法
+### 以下是用法
 * **在SwiftUI文件中直接使用**
 ```
 XFWaterfallFlowView(cellClass: myCollectionViewCell.classForCoder(),
